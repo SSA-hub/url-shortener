@@ -35,4 +35,10 @@ public class WebClient
         var response = await _httpClient.GetAsync($"/UrlShortener?shortUrl={shortUrl}");
         response.EnsureSuccessStatusCode();
     }
+
+    public async Task GetQrCode()
+    {
+        var response = await _httpClient.GetAsync("/QrCodeCreator");
+        response.EnsureSuccessStatusCode();
+    }
 }

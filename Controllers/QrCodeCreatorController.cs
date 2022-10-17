@@ -9,16 +9,18 @@ namespace url_shortener.Controllers;
 public class QrCodeCreatorController : ControllerBase
 {
     private readonly ILogger<QrCodeCreatorController> _logger;
+    private readonly QrCodeCreator _creator;
     
     public QrCodeCreatorController(ILogger<QrCodeCreatorController> logger)
     {
         _logger = logger;
+        _creator = new QrCodeCreator();
     }
     
     [HttpGet(Name = "CreateQrCode")]
     public Bitmap CreateQrCode()
     {
         _logger.LogTrace("Creating QR-code");
-        return QrCodeCreator.GetQrCode();
+        return _creator.GetQrCode();
     }
 }

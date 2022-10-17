@@ -35,4 +35,10 @@ public class SwaggerTests
         var shortUrl = await _webClient.PostUrl(fullUrl);
         await _webClient.GetUrl(shortUrl);
     }
+
+    [Fact]
+    public async Task QrCodeTest()
+    {
+        await _webClient.GetQrCode();
+    }
 }
