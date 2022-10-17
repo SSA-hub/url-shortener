@@ -1,4 +1,4 @@
 ﻿{
-  "Save":true,
-  "Path":"qrcode.bmp"
+  "Path":"qrcode.bmp",
+  "Url":"https://ironsoftware.com/csharp/barcode"
 }

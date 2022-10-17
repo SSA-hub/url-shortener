@@ -1,5 +1,6 @@
 ﻿using DbUp;
 using Newtonsoft.Json;
+using url_shortener.Entities;
 
 namespace url_shortener.Migrations;
 

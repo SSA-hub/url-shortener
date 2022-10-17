@@ -1,4 +1,4 @@
-﻿namespace url_shortener;
+﻿namespace url_shortener.Entities;
 
 public class Settings
 {

@@ -1,5 +1,4 @@
-﻿using System.Drawing;
-using MessagingToolkit.QRCode.Codec;
+﻿using MessagingToolkit.QRCode.Codec;
 using Newtonsoft.Json;
 using url_shortener.Entities;
 
@@ -14,12 +13,11 @@ public class QrCodeCreator
         var json = File.ReadAllText("appsettings.json");
         _settings = JsonConvert.DeserializeObject<QrSettings>(json);
     }
-    public Bitmap GetQrCode()
+    public string GetQrCode()
     {
         var encoder = new QRCodeEncoder();
-        var qrCode = encoder.Encode("https://ironsoftware.com/csharp/barcode");
-        if (_settings.Save)
-            qrCode.Save(_settings.Path!);
-        return qrCode;
+        var qrCode = encoder.Encode(_settings.Url);
+        qrCode.Save(_settings.Path!);
+        return _settings.Path!;
     }
 }

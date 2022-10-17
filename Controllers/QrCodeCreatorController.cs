@@ -1,5 +1,4 @@
-﻿using System.Drawing;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using url_shortener.Helpers;
 
 namespace url_shortener.Controllers;
@@ -18,7 +17,7 @@ public class QrCodeCreatorController : ControllerBase
     }
     
     [HttpGet(Name = "CreateQrCode")]
-    public Bitmap CreateQrCode()
+    public string CreateQrCode()
     {
         _logger.LogTrace("Creating QR-code");
         return _creator.GetQrCode();

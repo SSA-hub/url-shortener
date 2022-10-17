@@ -2,6 +2,6 @@
 
 public class QrSettings
 {
-    public bool Save { get; set; }
     public string? Path { get; set; }
+    public string? Url { get; set; }
 }
